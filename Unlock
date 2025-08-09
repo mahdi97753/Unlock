@@ -1,0 +1,8 @@
+  if (url.includes('/v1/user/subscription')) {
+    let body = JSON.parse($response.body);
+    body.data.isPremium = true;
+    body.data.expireDate = "2099-12-31T23:59:59Z";
+    $done({body: JSON.stringify(body)});
+  } else {
+    $done({});
+  }
